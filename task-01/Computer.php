@@ -1,21 +1,22 @@
 <?php
+
 class Computer
 {
 	protected $year;
 	protected $price;
 	protected $isNotebook;
-	protected $hardDiskMemory;
+	protected $hddMemory;
 	protected $freeMemory;
-	protected $operationSystem;
+	protected $os;
 	
-	public function __constructor($year, $price, $isNotebook,$hardDiskMemory,$freeMemory,$operationSystem)
+	public function __construct($year, $price, $isNotebook, $hddMemory, $freeMemory, $os)
 	{
 		$this->year = $year;
 		$this->price = $price;
 		$this->isNotebook = false;
-		$this->hardDiskMemory = $hardDiskMemory;
+		$this->hddMemory = $hddMemory;
 		$this->freeMemory = $freeMemory;
-		$this->operationSystem = $operationSystem;
+		$this->os = $os;
 	}
 	
 	
@@ -24,9 +25,9 @@ class Computer
 	{
 		return $this->year;
 	}
-	public function setYear($value)
+	public function setYear($year)
 	{
-		return $this->price = $year;
+		return $this->year = $year;
 	}
 	
 	//price
@@ -34,69 +35,69 @@ class Computer
 	{
 		return $this->price;
 	}
-	public function setPrice($value)
+	public function setPrice($price)
 	{
-		return $this->price = $value;
+		return $this->price = $price;
 	}
 	
 	//notebook
 	public function getIsNotebook()
 	{
-		$this->isNotebook;
+		return $this->isNotebook;
 	}
-	public function setIsNotebook($value)
+	public function setIsNotebook($isNotebook)
 	{
-		$this->isNotebook = (bool)$value;
+		return $this->isNotebook = $isNotebook;
 	}
 	
 	//hardDiskMemory
-	public function getHardDiskMemory()
+	public function getHddMemory()
 	{
-		$this->hardDiskMemory;
+		return $this->hddMemory;
 	}
-	public function setHardDiskMemory($value)
+	public function setHddMemory($hddMemory)
 	{
-		$this->hardDiskMemory = $value;
+		return $this->hddMemory = $hddMemory;
 	}
 	//freeMemory
 	public function getFreeMemory()
 	{
-		$this->freeMemory;
+		return $this->freeMemory;
 	}
-	public function setFreekMemory($value)
+	public function setFreeMemory($freeMemory)
 	{
-		$this->FreeMemory = $value;
+		return $this->freeMemory = $freeMemory;
 	}
-	//
-	public function getOperationSystem()
+	//OS
+	public function getOs()
 	{
-		$this->operationSystem;
+		return $this->os;
 	}
-	public function setOperationSystem($value)
+	public function setOs($os)
 	{
-		$this->operationSystem= $value;
+		return $this->os = $os;
 	}
 	
-	protected function useMemory()
+	public function useMemory($memory)
 	{
-	
+		if ($this->freeMemory > $memory) {
+			return "enough memory to install new os";
+		}else {
+			return "not enough memory";
+		}
 	}
 	
-	public function changeOperationSystem()
+	public function changeOS($newOs) 
 	{
-		
-	}
+		if ($newOs == $this->os) {
+            return "process to reinstall your os: $this->os";
+        } else {
+            return @"your os is changed to: $this->setOs($newOs)";
+        }
+    }
 	
 	public function getInfo()
 	{
-		return sprintf('PC year:%s price:%s notebook:%s hddMemory:%s freeMemory:%s OS:%s',
-				$this->getYear(),
-				$this->getPrice(),
-				$this->getIsNotebook(),
-				$this->getHardDiskMemory(),
-				$this->getFreeMemory(),
-				$this->getOperationSystem()
-				);
+		return sprintf('year:%d price:%d', $this->getYear(), $this->getPrice());
 	}
-
 }
