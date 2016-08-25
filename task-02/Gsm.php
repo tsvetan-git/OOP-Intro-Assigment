@@ -81,6 +81,12 @@ class Gsm
 		$this->setHasSimCard(false);
 	}
 	
+	public function getSumForCall() 
+	{
+		$sum = $value->getPriceForAMinute() * $this->getOutgoingCallsDuration();
+		return $sum;
+	}
+	
 	public function call(Gsm $receiver, $duration)
 	{
 		$call = new Call($this, $receiver, $duration);
@@ -95,12 +101,4 @@ class Gsm
 		echo "call duration: ". $this->getLastOutgoingCall().PHP_EOL;
 		echo "sum for this outgoing call: ".$this->getSumForCall($call).PHP_EOL;
 	}
-	
-	public function getSumForCall() 
-	{
-		$sum = $value->getPriceForAMinute() * $this->getOutgoingCallsDuration();
-		return $sum;
-	}
-	
-
 }
