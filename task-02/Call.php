@@ -1,7 +1,7 @@
 <?php
 class Call
 {
-    protected $priceForAMinute;
+    protected $priceForAMinute = 0.25;//const?
     protected $caller;
     protected $receiver;
     protected $duration;

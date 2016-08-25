@@ -83,7 +83,17 @@ class Gsm
 	
 	public function call(Gsm $receiver, $duration)
 	{
-
+		$call = new Call($this, $receiver, $duration);
+		$this->setLastOutgoingCall($duration);
+		
+		$receiver->setLastIncomingCall($duration);
+		$outCalls= $this->getOutgoingCallsDuration() + $this->getLastOutgoingCall();
+		$this->setOutgoingCallsDuration($outCalls);
+		
+		echo $this->getModel().PHP_EOL;	
+		echo "call to number: ".$receiver->getSimMobileNumber().PHP_EOL;
+		echo "call duration: ". $this->getLastOutgoingCall().PHP_EOL;
+		echo "sum for this outgoing call: ".$this->getSumForCall($call).PHP_EOL;
 	}
 	
 	public function getSumForCall() 
