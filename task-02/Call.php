@@ -20,7 +20,7 @@ class Call
     
     public function setPriceForAMinute($setPriceForAMinute)
     {
-    	return $this->priceForAMinute = $setPriceForAMinute;
+    	$this->priceForAMinute = $setPriceForAMinute;
     }
     
     public function getCaller()
@@ -30,7 +30,7 @@ class Call
     
     public function setCaller($caller)
     {
-    	return $this->caller = $caller;
+    	$this->caller = $caller;
     }
     
     public function getReceiver() 
@@ -40,7 +40,7 @@ class Call
     
     public function setReceiver($receiver)
     {
-    	return $this->receiver = $receiver;
+    	$this->receiver = $receiver;
     }
     
     public function getDuration() 
@@ -51,7 +51,7 @@ class Call
     public function setDuration($duration) 
     {
     	if ($duration > 0 && $duration < 120){
-    		return $this->duration = $duration;
+    		$this->duration = $duration;
     	}//else error
     }
 }

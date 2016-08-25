@@ -21,7 +21,7 @@ class Employee
 	public function setName($newName)
 	{
 		if (isset($newName)) {
-			return $this->name = $newName;
+			$this->name = $newName;
 		}
 	}
 	
@@ -32,7 +32,7 @@ class Employee
 	
 	public function setCurrentTask($currentTask)
 	{
-		return $this->currentTask = $currentTask;
+		$this->currentTask = $currentTask;
 	}
 	
 	public function getHoursLeft() 
@@ -43,7 +43,7 @@ class Employee
 	public function setHoursLeft($hoursLeft) 
 	{
 		if ($hoursLeft >= 0) {
-			return $this->hoursLeft = $hoursLeft;
+			$this->hoursLeft = $hoursLeft;
 		}
 	}
 	

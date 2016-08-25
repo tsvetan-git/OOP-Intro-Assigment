@@ -22,7 +22,7 @@ class Task
 	
 	public function setName($name) 
 	{
-		return $this->name = $name;
+		$this->name = $name;
 	}
 	
 	public function getWorkingHours()
@@ -32,7 +32,7 @@ class Task
 	
 	public function setWorkingHours($workingHours)
 	{
-		return $this->workingHours = $workingHours;
+		$this->workingHours = $workingHours;
 	}
 	
 	public function getInfo()

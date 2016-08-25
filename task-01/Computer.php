@@ -19,7 +19,6 @@ class Computer
 		$this->os = $os;
 	}
 	
-	
 	//year
 	public function getYear()
 	{
@@ -27,9 +26,8 @@ class Computer
 	}
 	public function setYear($year)
 	{
-		return $this->year = $year;
+		$this->year = $year;
 	}
-	
 	//price
 	public function getPrice()
 	{
@@ -37,9 +35,8 @@ class Computer
 	}
 	public function setPrice($price)
 	{
-		return $this->price = $price;
-	}
-	
+		$this->price = $price;
+	}	
 	//notebook
 	public function getIsNotebook()
 	{
@@ -47,9 +44,8 @@ class Computer
 	}
 	public function setIsNotebook($isNotebook)
 	{
-		return $this->isNotebook = $isNotebook;
-	}
-	
+		$this->isNotebook = $isNotebook;
+	}	
 	//hardDiskMemory
 	public function getHddMemory()
 	{
@@ -57,8 +53,8 @@ class Computer
 	}
 	public function setHddMemory($hddMemory)
 	{
-		return $this->hddMemory = $hddMemory;
-	}
+		$this->hddMemory = $hddMemory;
+	}	
 	//freeMemory
 	public function getFreeMemory()
 	{
@@ -66,7 +62,7 @@ class Computer
 	}
 	public function setFreeMemory($freeMemory)
 	{
-		return $this->freeMemory = $freeMemory;
+		$this->freeMemory = $freeMemory;
 	}
 	//OS
 	public function getOs()
